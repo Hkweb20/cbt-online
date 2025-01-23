@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Focus - Bootstrap Admin Dashboard </title>
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon.png">
+    <link rel="stylesheet" href="./vendor/owl-carousel/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="./vendor/owl-carousel/css/owl.theme.default.min.css">
+    <link href="./vendor/jqvmap/css/jqvmap.min.css" rel="stylesheet">
+    <link href="./css/style.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+
+</head>
+
+<body>
+
+    <!--*******************
+        Preloader start
+    ********************-->
+    <div id="preloader">
+        <div class="sk-three-bounce">
+            <div class="sk-child sk-bounce1"></div>
+            <div class="sk-child sk-bounce2"></div>
+            <div class="sk-child sk-bounce3"></div>
+        </div>
+    </div>
+    <!--*******************
+        Preloader end
+    ********************-->
+
+
+    <!--**********************************
+        Main wrapper start
+    ***********************************-->
+    <div id="main-wrapper">
+
+        <!--**********************************
+            Nav header start
+        ***********************************-->
+        <div class="nav-header">
+            <a href="index.html" class="brand-logo">
+                <img class="logo-abbr" src="./images/logo.png" alt="">
+                <img class="logo-compact" src="./images/logo-text.png" alt="">
+                <img class="brand-title" src="./images/logo-text.png" alt="">
+            </a>
+
+            <div class="nav-control">
+                <div class="hamburger">
+                    <span class="line"></span><span class="line"></span><span class="line"></span>
+                </div>
+            </div>
+        </div>
+        <!--**********************************
+            Nav header end
+        ***********************************-->
+
+        <!--**********************************
+            Header start
+        ***********************************-->
+        <div class="header">
+            <div class="header-content">
+                <nav class="navbar navbar-expand">
+                    <div class="collapse navbar-collapse justify-content-between">
+                        <div class="header-left">
+                            <div class="search_bar dropdown">
+                                <span class="search_icon p-3 c-pointer" data-toggle="dropdown">
+                                    <i class="mdi mdi-magnify"></i>
+                                </span>
+                                <div class="dropdown-menu p-0 m-0">
+                                    <form>
+                                        <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+                        <ul class="navbar-nav header-right">
+                            <li class="nav-item dropdown notification_dropdown">
+                                <a class="nav-link" href="#" role="button" data-toggle="dropdown">
+                                    <i class="mdi mdi-bell"></i>
+                                    <div class="pulse-css"></div>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right">
+                                    <ul class="list-unstyled">
+                                        <li class="media dropdown-item">
+                                            <span class="success"><i class="ti-user"></i></span>
+                                            <div class="media-body">
+                                                <a href="#">
+                                                    <p><strong>Martin</strong> has added a <strong>customer</strong> Successfully
+                                                    </p>
+                                                </a>
+                                            </div>
+                                            <span class="notify-time">3:20 am</span>
+                                        </li>
+                                        <li class="media dropdown-item">
+                                            <span class="primary"><i class="ti-shopping-cart"></i></span>
+                                            <div class="media-body">
+                                                <a href="#">
+                                                    <p><strong>Jennifer</strong> purchased Light Dashboard 2.0.</p>
+                                                </a>
+                                            </div>
+                                            <span class="notify-time">3:20 am</span>
+                                        </li>
+                                        <li class="media dropdown-item">
+                                            <span class="danger"><i class="ti-bookmark"></i></span>
+                                            <div class="media-body">
+                                                <a href="#">
+                                                    <p><strong>Robin</strong> marked a <strong>ticket</strong> as unsolved.
+                                                    </p>
+                                                </a>
+                                            </div>
+                                            <span class="notify-time">3:20 am</span>
+                                        </li>
+                                        <li class="media dropdown-item">
+                                            <span class="primary"><i class="ti-heart"></i></span>
+                                            <div class="media-body">
+                                                <a href="#">
+                                                    <p><strong>David</strong> purchased Light Dashboard 1.0.</p>
+                                                </a>
+                                            </div>
+                                            <span class="notify-time">3:20 am</span>
+                                        </li>
+                                        <li class="media dropdown-item">
+                                            <span class="success"><i class="ti-image"></i></span>
+                                            <div class="media-body">
+                                                <a href="#">
+                                                    <p><strong> James.</strong> has added a<strong>customer</strong> Successfully
+                                                    </p>
+                                                </a>
+                                            </div>
+                                            <span class="notify-time">3:20 am</span>
+                                        </li>
+                                    </ul>
+                                    <a class="all-notification" href="#">See all notifications <i
+                                            class="ti-arrow-right"></i></a>
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown header-profile">
+                                <a class="nav-link" href="#" role="button" data-toggle="dropdown">
+                                    <i class="mdi mdi-account"></i>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right">
+                                    <a href="./app-profile.html" class="dropdown-item">
+                                        <i class="icon-user"></i>
+                                        <span class="ml-2">Profile </span>
+                                    </a>
+                                    <a href="./email-inbox.html" class="dropdown-item">
+                                        <i class="icon-envelope-open"></i>
+                                        <span class="ml-2">Inbox </span>
+                                    </a>
+                                    <a href="./page-login.html" class="dropdown-item">
+                                        <i class="icon-key"></i>
+                                        <span class="ml-2">Logout </span>
+                                    </a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <!--**********************************
+            Header end ti-comment-alt
+        ***********************************-->
+
+        <!--**********************************
+            Sidebar start
+        ***********************************-->
+        <div class="quixnav">
+            <div class="quixnav-scroll">
+                <ul class="metismenu" id="menu">
+                    <li class="nav-label first">Main Menu</li>
+                    <li><a href="./index.html"><i
+                                class="icon icon-single-04"></i><span class="nav-text">Dashboard</span></a>
+                    </li>
+                    <li class="nav-label">Navigations</li>
+                    <li><a href="widget-basic.html" aria-expanded="false"><i class="icon icon-globe-2"></i><span
+                        class="nav-text">e-wallet</span></a></li>
+                    <li><a href="widget-basic.html" aria-expanded="false"><i class="icon icon-globe-2"></i><span
+                            class="nav-text">Transaction History</span></a></li>
+                    <li><a href="widget-basic.html" aria-expanded="false"><i class="icon icon-globe-2"></i><span
+                                class="nav-text">How It works</span></a></li>
+                    <li><a href="widget-basic.html" aria-expanded="false"><i class="icon icon-globe-2"></i><span
+                                    class="nav-text">Profile</span></a></li>
+                    <li><a href="widget-basic.html" aria-expanded="false"><i class="icon icon-globe-2"></i><span
+                                            class="nav-text">Change Password</span></a></li>
+                    <li> <a href="./page-login.html" class="dropdown-item">
+                        <i class="icon-key"></i>
+                        <span class="ml-2">Logout </span>
+                    </a></li>
+                  
+                   
+                    <li class="nav-label">Forms</li>
+                    <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
+                                class="icon icon-form"></i><span class="nav-text">Forms</span></a>
+                        <ul aria-expanded="false">
+                            <li><a href="./form-element.html">Form Elements</a></li>
+                            <li><a href="./form-wizard.html">Wizard</a></li>
+                            <li><a href="./form-editor-summernote.html">Summernote</a></li>
+                            <li><a href="form-pickers.html">Pickers</a></li>
+                            <li><a href="form-validation-jquery.html">Jquery Validate</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-label">Table</li>
+                    <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
+                                class="icon icon-layout-25"></i><span class="nav-text">Table</span></a>
+                        <ul aria-expanded="false">
+                            <li><a href="table-bootstrap-basic.html">Bootstrap</a></li>
+                            <li><a href="table-datatable-basic.html">Datatable</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+
+        </div>
+        <!--**********************************
+            Sidebar end
+        ***********************************-->
+
+        <!--**********************************
+            Content body start
+        ***********************************-->
+        <div class="content-body">
+            <div class="container col-12 col-md-8 my-5">
+                <!-- Change of Institution Form -->
+                <div class="card shadow-sm">
+                    <div class="card-header">
+                        <h4 class="card-title mb-0">JAMB Change of Institution Form</h4>
+                    </div>
+                    <div class="card-body">
+                        <!-- Form -->
+                        <form action="/submit-change-institution" method="POST" enctype="multipart/form-data">
+                            <!-- JAMB Registration Number -->
+                            <div class="mb-3">
+                                <label for="jambRegNumber" class="form-label">JAMB Registration Number</label>
+                                <input type="text" class="form-control" id="jambRegNumber" name="jambRegNumber" required>
+                            </div>
+        
+                            <!-- Change Type -->
+                            <div class="mb-3">
+                                <label for="changeType" class="form-label">Change Type</label>
+                                <select class="form-select" id="changeType" name="changeType" required>
+                                    <option value="institution">Change of Institution</option>
+                                    <option value="course">Change of Course</option>
+                                    <option value="institution_course">Change of Institution and Course</option>
+                                </select>
+                            </div>
+        
+                            <!-- New Institution & Course -->
+                            <div class="mb-3">
+                                <label for="newInstitution" class="form-label">New Institution</label>
+                                <input type="text" class="form-control" id="newInstitution" name="newInstitution" required>
+                            </div>
+        
+                            <div class="mb-3">
+                                <label for="newCourse" class="form-label">New Course</label>
+                                <input type="text" class="form-control" id="newCourse" name="newCourse" required>
+                            </div>
+        
+                            <!-- O'Level Result -->
+                            <div class="mb-3">
+                                <label for="oLevelResults" class="form-label">O'Level Results (WAEC/NECO)</label>
+                                <input type="file" class="form-control" id="oLevelResults" name="oLevelResults" accept=".jpg,.jpeg,.png,.pdf" required>
+                            </div>
+        
+        
+                            <!-- Second Result (Optional) -->
+                            <div class="mb-3">
+                                <label for="secondResult" class="form-label">Second Result (Optional)</label>
+                                <input type="file" class="form-control" id="secondResult" name="secondResult" accept=".jpg,.jpeg,.png,.pdf">
+                            </div>
+        
+                            <!-- Submit Button -->
+                            <div class="d-flex justify-content-between mt-4">
+                                <a href="#" class="btn btn-secondary">Cancel</a>
+                                <button type="submit" class="btn btn-primary">Submit Change Request</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+        <!--**********************************
+            Content body end
+        ***********************************-->
+
+
+        <!--**********************************
+            Footer start
+        ***********************************-->
+        <div class="footer bg-primary text-white py-4">
+            <div class="container">
+                <div class="row">
+                    <!-- Footer Content: Flexbox for larger screens, stacked on mobile -->
+                    <div class="col-12 d-flex flex-column flex-md-row justify-content-between">
+                        
+                        <!-- Image Section (Optional, if you want to add an image) -->
+                        <div class="footer-image mb-3 mb-md-0">
+                            <img src="your-image-url.png" alt="Logo" class="img-fluid" style="max-width: 150px;">
+                        </div>
+                        
+                        <!-- Useful Links -->
+                        <div class="useful-links mb-3 mb-md-0">
+                            <h6 class="text-warning">Useful Links</h6>
+                            <ul class="list-unstyled">
+                                <li><a href="#" class="text-white">Home</a></li>
+                                <li><a href="#" class="text-white">How It Works</a></li>
+                                <li><a href="#" class="text-white">Contact Us</a></li>
+                                <li><a href="#" class="text-white">Sign Up</a></li>
+                                <li><a href="#" class="text-white">Login</a></li>
+                                <li><a href="#" class="text-white">Online Services</a></li>
+                            </ul>
+                        </div>
+        
+                        <!-- Contact Us -->
+                        <div class="contact-us mb-3 mb-md-0">
+                            <h6 class="text-warning">Contact Us</h6>
+                            <p>Email: <a href="mailto:embassybusinesscafe@gmail.com" class="text-warning">embassybusinesscafe@gmail.com</a></p>
+                            <p>Care Line: <a href="tel:+2347033914475" class="text-warning">07033914475</a></p>
+                        </div>
+        
+                        <!-- Account Details -->
+                        <div class="account-details mb-3 mb-md-0">
+                            <h6 class="text-warning">Account Details</h6>
+                            <p><strong>MONIEPOINT MFB</strong><br>Account Name: Embassy Cafe 3<br>Account Number: 5718988504</p>
+                            <p><strong>ZENITH BANK</strong><br>Account Name: Embassy Business Cafe<br>Account Number: 1017247141</p>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Copyright Section (Always at the bottom) -->
+                <div class="row mt-4">
+                    <div class="col-12 text-center">
+                        <p class="mb-0">Copyright © 2025 Embassy e-Services. All Rights Reserved. Designed & Developed by <a href="#" target="_blank" class="text-warning">Quixkit</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        
+        <!--**********************************
+            Footer end
+        ***********************************-->
+
+        <!--**********************************
+           Support ticket button start
+        ***********************************-->
+
+        <!--**********************************
+           Support ticket button end
+        ***********************************-->
+
+
+    </div>
+    <!--**********************************
+        Main wrapper end
+    ***********************************-->
+
+    <!--**********************************
+        Scripts
+    ***********************************-->
+    <!-- Required vendors -->
+    <script src="./vendor/global/global.min.js"></script>
+    <script src="./js/quixnav-init.js"></script>
+    <script src="./js/custom.min.js"></script>
+
+
+    <!-- Vectormap -->
+    <script src="./vendor/raphael/raphael.min.js"></script>
+    <script src="./vendor/morris/morris.min.js"></script>
+
+
+    <script src="./vendor/circle-progress/circle-progress.min.js"></script>
+    <script src="./vendor/chart.js/Chart.bundle.min.js"></script>
+
+    <script src="./vendor/gaugeJS/dist/gauge.min.js"></script>
+
+    <!--  flot-chart js -->
+    <script src="./vendor/flot/jquery.flot.js"></script>
+    <script src="./vendor/flot/jquery.flot.resize.js"></script>
+
+    <!-- Owl Carousel -->
+    <script src="./vendor/owl-carousel/js/owl.carousel.min.js"></script>
+
+    <!-- Counter Up -->
+    <script src="./vendor/jqvmap/js/jquery.vmap.min.js"></script>
+    <script src="./vendor/jqvmap/js/jquery.vmap.usa.js"></script>
+    <script src="./vendor/jquery.counterup/jquery.counterup.min.js"></script>
+
+
+    <script src="./js/dashboard/dashboard-1.js"></script>
+
+</body>
+
+</html>
