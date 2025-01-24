@@ -13,7 +13,6 @@
     <link href="./vendor/jqvmap/css/jqvmap.min.css" rel="stylesheet">
     <link href="./css/style.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
 
 
 </head>
@@ -228,117 +227,105 @@
             Content body start
         ***********************************-->
         <div class="content-body">
-            <!-- Navbar or Header with Home link -->
-        
-            <!-- Form Container -->
-            <div class="container mt-5 bg-white" style="background-color: #fff;">
-                <!-- Header with bottom border -->
-        
-                <!-- Form with white background and no border (except the header and below buttons) -->
-                <form id="levelResultForm" class="bg-white rounded-3 shadow-sm mb-5">
-                <div class="border-bottom p-3 mb-4">Submit Entry for O'Level Result Upload</div>
-                <div class="p-3">
-                    <!-- Type -->
-                    <div class="mb-3">
-                        <label for="type" class="form-label">Type</label>
-                        <select class="form-select" id="type" required>
-                            <option value="" disabled selected>---Choose One---</option>
-                            <option value="o_level">O'Level</option>
-                            <option value="a_level">A-Level</option>
-                        </select>
-                        <div class="invalid-feedback">
-                            Type cannot be blank.
-                        </div>
-                    </div>
-
-                    <!-- Full Name -->
-                    <div class="mb-3">
-                        <label for="fullName" class="form-label">Full Name</label>
-                        <input type="text" class="form-control" id="fullName" placeholder="Full Name" required>
-                        <div class="invalid-feedback">
-                            Full Name cannot be blank.
-                        </div>
-                    </div>
-
-                    <!-- Profile Code -->
-                    <div class="mb-3">
-                        <label for="profileCode" class="form-label">Profile Code</label>
-                        <input type="text" class="form-control" id="profileCode" placeholder="Profile code or JAMB Reg No or Direct Entry Reg No." required>
-                        <div class="invalid-feedback">
-                            Profile Code cannot be blank.
-                        </div>
-                    </div>
-
-                    <!-- JAMB Year -->
-                    <div class="mb-3">
-                        <label for="jambYear" class="form-label">JAMB Year</label>
-                        <select class="form-select" id="jambYear" required>
-                            <option value="" disabled selected>Choose JAMB Year</option>
-                            <option value="2021">2021</option>
-                            <option value="2022">2022</option>
-                            <option value="2023">2023</option>
-                        </select>
-                        <div class="invalid-feedback">
-                            JAMB Year cannot be blank.
-                        </div>
-                    </div>
-
-                    <!-- O'Level Subjects -->
-                    <div id="subjectsContainer" class="mb-3">
-                        <label class="form-label">O'Level Subjects</label>
-                        <div class="subject-row" id="subjectRow">
-                            <div class="row mb-3 subject-entry">
-                                <div class="col-md-3">
-                                    <select class="form-select subject" required>
-                                        <option value="" disabled selected>Select Subject</option>
-                                        <option value="math">Mathematics</option>
-                                        <option value="eng">English</option>
-                                        <option value="bio">Biology</option>
-                                        <option value="phy">Physics</option>
-                                        <option value="chem">Chemistry</option>
-                                    </select>
-                                </div>
-                                <div class="col-md-2">
-                                    <select class="form-select grade" required>
-                                        <option value="" disabled selected>Select Grade</option>
-                                        <option value="A1">A1</option>
-                                        <option value="B2">B2</option>
-                                        <option value="B3">B3</option>
-                                        <option value="C4">C4</option>
-                                        <option value="C5">C5</option>
-                                        <option value="C6">C6</option>
-                                    </select>
-                                </div>
-                                <div class="col-md-2">
-                                    <input type="number" class="form-control year" placeholder="Exam Year" required>
-                                </div>
-                                <div class="col-md-2">
-                                    <input type="text" class="form-control examNumber" placeholder="Exam Number" required>
-                                </div>
-                                <div class="col-md-2">
-                                    <select class="form-select examType" required>
-                                        <option value="" disabled selected>Select Exam Type</option>
-                                        <option value="waec">WAEC</option>
-                                        <option value="neco">NECO</option>
-                                        <option value="gce">GCE</option>
-                                    </select>
-                                </div>
-                                <div class="col-md-1 d-flex align-items-center justify-content-center">
-                                    <button type="button" class="btn btn-danger" onclick="deleteSubject(this)">
-                                        <i class="bi bi-trash"></i>
-                                    </button>
+          <div class="col-xl-10 col-xxl-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title">Submit Entry for O'Level Result Upload</h4>
+                </div>
+                <div class="card-body">
+                    <div class="basic-form">
+                        <form id="levelResultForm">
+                            <!-- Type Selection -->
+                            <div class="form-group mb-3">
+                                <label for="type" class="form-label">Type</label>
+                                <select class="form-control form-control-lg id="type" required>
+                                    <option value="" disabled selected>---Choose One---</option>
+                                    <option value="o_level">O'Level</option>
+                                    <option value="a_level">A-Level</option>
+                                </select>
+                                <div class="invalid-feedback">Type cannot be blank.</div>
+                            </div>
+            
+                            <!-- Full Name -->
+                            <div class="form-group mb-3">
+                                <label for="fullName" class="form-label">Full Name</label>
+                                <input type="text" class="form-control" id="fullName" placeholder="Full Name" required>
+                                <div class="invalid-feedback">Full Name cannot be blank.</div>
+                            </div>
+            
+                            <!-- Profile Code -->
+                            <div class="form-group mb-3">
+                                <label for="profileCode" class="form-label">Profile Code</label>
+                                <input type="text" class="form-control" id="profileCode" placeholder="Profile code or JAMB Reg No or Direct Entry Reg No." required>
+                                <div class="invalid-feedback">Profile Code cannot be blank.</div>
+                            </div>
+            
+                            <!-- JAMB Year -->
+                            <div class="form-group mb-3">
+                                <label for="jambYear" class="form-label">JAMB Year</label>
+                                <select class="form-control " id="jambYear" required>
+                                    <option value="" disabled selected>Choose JAMB Year</option>
+                                    <option value="2021">2021</option>
+                                    <option value="2022">2022</option>
+                                    <option value="2023">2023</option>
+                                </select>
+                                <div class="invalid-feedback">JAMB Year cannot be blank.</div>
+                            </div>
+            
+                            <!-- O'Level Subjects Section -->
+                            <div id="subjectsContainer" class="mb-3">
+                                <label class="form-label">O'Level Subjects</label>
+                                <div class="subject-row" id="subjectRow">
+                                    <div class="row mb-3 subject-entry">
+                                        <div class="col-md-3">
+                                            <select class="form-control subject" required>
+                                                <option value="" disabled selected>Select Subject</option>
+                                                <option value="math">Mathematics</option>
+                                                <option value="eng">English</option>
+                                                <option value="bio">Biology</option>
+                                                <option value="phy">Physics</option>
+                                                <option value="chem">Chemistry</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <select class="form-control grade" required>
+                                                <option value="" disabled selected>Select Grade</option>
+                                                <option value="A1">A1</option>
+                                                <option value="B2">B2</option>
+                                                <option value="B3">B3</option>
+                                                <option value="C4">C4</option>
+                                                <option value="C5">C5</option>
+                                                <option value="C6">C6</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <input type="number" class="form-control year" placeholder="Exam Year" required>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <input type="text" class="form-control examNumber" placeholder="Exam Number" required>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <select class="form-control examType" required>
+                                                <option value="" disabled selected>Select Exam Type</option>
+                                                <option value="waec">WAEC</option>
+                                                <option value="neco">NECO</option>
+                                                <option value="gce">GCE</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-1 d-flex align-items-center justify-content-center">
+                                            <button type="button" class="btn btn-danger" onclick="deleteSubject(this)">
+                                                <i class="bi bi-trash"></i>
+                                            </button>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                            
-                        </div>
-                    </div>
-
-                    <!-- Add More Subjects Button with Plus Icon -->
-                    <button type="button" class="btn btn-info mb-3" onclick="addSubject()">
-                        <i class="bi bi-plus-lg"></i> Add More Subjects
-                    </button>
-
-                    <!-- Second Sitting Fields (hidden by default) -->
+            
+                            <!-- Add More Subjects Button -->
+                            <button type="button" class="btn btn-info mb-3" onclick="addSubject()">
+                                <i class="bi bi-plus-lg"></i> Add More Subjects
+                            </button>
+                             <!-- Second Sitting Fields (hidden by default) -->
                     <div id="">
                         <div class="mb-3">
                             <label for="secondSittingFile" class="form-label">O Level Result</label>
@@ -370,33 +357,29 @@
                             <input type="file" class="form-control" id="firstSittingFile">
                         </div>
                     </div>
-
-                    <!-- Additional Information -->
-                    <div class="mb-3">
-                        <label for="additionalInfo" class="form-label">Additional Information</label>
-                        <textarea class="form-control" id="additionalInfo" rows="3"></textarea>
+                            <!-- Additional Information -->
+                            <div class="form-group mb-3">
+                                <label for="additionalInfo" class="form-label">Additional Information</label>
+                                <textarea class="form-control" id="additionalInfo" placeholder="Optional" rows="3"></textarea>
+                            </div>
+            
+                            <!-- Buttons -->
+                            <div class="d-flex justify-content-center mb-5 p-4">
+                                <button type="button" class="btn btn-secondary mx-2">Cancel</button>
+                                <button type="submit" class="btn btn-primary mx-2">Submit</button>
+                            </div>
+                        </form>
                     </div>
-                   
-
-                    </div>
-                     <!-- Buttons below the form -->
-                    <hr>
-
-                     <div class="d-flex justify-content-center mb-5 p-4">
-                        <button type="button" class="btn btn-secondary mx-2">Cancel</button>
-                        <button type="submit" class="btn btn-primary mx-2">Submit</button>
-                        </div>
-                  </form>
-        
-               
+                </div>
             </div>
-        
+          </div>
+            
             <!-- Bootstrap JS (includes Popper for dropdowns and tooltips) -->
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-        
+            
             <!-- Bootstrap Icons for Plus Icon -->
             <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-        
+            
             <script>
                 // Function to add more subjects
                 function addSubject() {
@@ -405,7 +388,7 @@
                     newSubjectRow.classList.add('row', 'mb-3', 'subject-entry');
                     newSubjectRow.innerHTML = `
                         <div class="col-md-3">
-                            <select class="form-select subject" required>
+                            <select class="form-control subject" required>
                                 <option value="" disabled selected>Select Subject</option>
                                 <option value="math">Mathematics</option>
                                 <option value="eng">English</option>
@@ -415,7 +398,7 @@
                             </select>
                         </div>
                         <div class="col-md-2">
-                            <select class="form-select grade" required>
+                            <select class="form-control grade" required>
                                 <option value="" disabled selected>Select Grade</option>
                                 <option value="A1">A1</option>
                                 <option value="B2">B2</option>
@@ -432,7 +415,7 @@
                             <input type="text" class="form-control examNumber" placeholder="Exam Number" required>
                         </div>
                         <div class="col-md-2">
-                            <select class="form-select examType" required>
+                            <select class="form-control examType" required>
                                 <option value="" disabled selected>Select Exam Type</option>
                                 <option value="waec">WAEC</option>
                                 <option value="neco">NECO</option>
@@ -447,13 +430,13 @@
                     `;
                     subjectContainer.appendChild(newSubjectRow);
                 }
-        
+            
                 // Function to delete a subject
                 function deleteSubject(button) {
                     const subjectRow = button.closest('.subject-entry');
                     subjectRow.remove();
                 }
-        
+            
                 // Toggle visibility of second sitting fields
                 function toggleSecondSittingFields() {
                     const secondSittingFields = document.getElementById('secondSittingFields');
@@ -465,6 +448,7 @@
                     }
                 }
             </script>
+            
         </div>
         
         
@@ -583,4 +567,4 @@
 
 </body>
 
-</html>
+</html>g
