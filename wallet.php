@@ -12,6 +12,10 @@
     <link href="./vendor/datatables/css/jquery.dataTables.min.css" rel="stylesheet">
     <!-- Custom Stylesheet -->
     <link href="./css/style.css" rel="stylesheet">
+    <!-- Bootstrap JS (ensure you have this included in your project) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
 
 </head>
 
@@ -227,27 +231,120 @@
         <div class="content-body">
             <div class="container">
                 <div class="container my-5">
-                    <div class="container">
-                        <div class="row mb-4">
-                            <div class="col-12 col-md-4 mx-auto"> <!-- mx-auto centers the card -->
-                                <div class="card shadow-sm">
-                                    <div class="mt-4 text-center">
-                                        <h5>My e-Wallet</h5>
-                                    </div>
-                                    <hr>
-                                    <div class="card-body text-center">
-                                        <p>Wallet Balance: <strong>N10,000</strong></p>
-                                    </div>
-                                    <div class="card-footer text-center">
-                                        <button class="btn btn-outline-primary ">
-                                            <i class="bi bi-wallet2"></i> Fund Wallet
-                                        </button>
-                                    </div>
-                                    
-                                </div>
-                            </div>
+                    <!-- Trigger button for the fund wallet modal -->
+<!-- Trigger button for the fund wallet modal -->
+<div class="container">
+    <div class="row mb-4">
+        <div class="col-12 col-md-4 mx-auto">
+            <div class="card shadow-sm">
+                <div class="mt-4 text-center">
+                    <h5>My e-Wallet</h5>
+                </div>
+                <hr>
+                <div class="card-body text-center">
+                    <p>Wallet Balance: <strong>N10,000</strong></p>
+                </div>
+                <div class="card-footer text-center">
+                    <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#fundWalletModal">
+                        <i class="bi bi-wallet2"></i> Fund Wallet
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Fund Wallet Modal -->
+<div class="modal fade" id="fundWalletModal" tabindex="-1" aria-labelledby="fundWalletModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="fundWalletModalLabel">Fund Wallet</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p class="p-2 bg-primary">Kindly Choose FLUTTERWAVE to avoid the extra ₦100 fee on PAYSTACK for transactions of ₦2,500 and above.</p>
+                
+                <form id="fundWalletForm">
+                    <div class="mb-3">
+                        <label for="amount" class="form-label">Amount</label>
+                        <input type="number" class="form-control" id="amount" value="650">
+                    </div>
+
+                    <div class="row ms-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="paymentGateway" id="paystack" value="paystack" checked onchange="showBankDetails()">
+                            <label class="form-check-label" for="paystack">
+                                Paystack
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="paymentGateway" id="flutterwave" value="flutterwave" onchange="showBankDetails()">
+                            <label class="form-check-label" for="flutterwave">
+                                Flutterwave
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="paymentGateway" id="bankTransfer" value="bankTransfer" onchange="showBankDetails()">
+                            <label class="form-check-label" for="bankTransfer">
+                                Bank Transfer
+                            </label>
                         </div>
                     </div>
+                    
+                    
+
+                   <!-- Bank Transfer Section (hidden by default) -->
+                   
+                    <div id="bankDetails" style="display: none; border: 1px solid #ddd; padding: 15px; border-radius: 8px; background-color: #fff;">
+                        <h6 class="mb-4" style="font-size: 1.2rem; font-weight: bold;">Bank Transfer Details</h6>
+                        <div class="my-2">
+                            <span class="text-danger">*</span> Please make payment into the bank account below, after which you are required to upload proof of payment
+                        </div>
+                        <table class="table table-sm table-bordered">
+                            <tbody>
+                                <tr>
+                                    <th scope="row" style="width: 30%;">Account Name:</th>
+                                    <td>Lorem, ipsum.</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Bank Name:</th>
+                                    <td>MONIEPOINT MFB</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Account Number:</th>
+                                    <td>XXXXXXXXXX</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" class="text-center"><strong>OR</strong></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Account Name:</th>
+                                    <td>XXXXXXXX BUSINESS CAFE</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Bank Name:</th>
+                                    <td>ZENITH BANK</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Account Number:</th>
+                                    <td>XXXXXXXXX</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        
+                    </div>
+
+
+                    <div class="d-flex justify-content-center">
+                        <button type="submit" class="btn btn-outline-primary mt-3">Proceed</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
                 
                     <!-- Section for O'Level Result Upload History -->
                     <div class="row my-5">
@@ -445,5 +542,19 @@
     <script src="./js/plugins-init/datatables.init.js"></script>
 
 </body>
+<script>
+   function showBankDetails() {
+    const paymentGateway = document.querySelector('input[name="paymentGateway"]:checked').value;
+    const bankDetailsSection = document.getElementById('bankDetails');
+    
+    if (paymentGateway === 'bankTransfer') {
+        bankDetailsSection.style.display = 'block';
+    } else {
+        bankDetailsSection.style.display = 'none';
+    }
+}
 
+</script>
+<!-- Bootstrap JS (includes Popper for dropdowns and tooltips) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </html>

@@ -15,7 +15,6 @@ require  './inc/lib.links.php';
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon.png">
     <link href="./css/style.css" rel="stylesheet">
-
 </head>
 
 <body class="h-100">
