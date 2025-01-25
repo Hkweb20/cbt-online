@@ -133,7 +133,7 @@ require './inc/lib.links.php';
 
     <script>
         $(document).ready(function(){
-            $('#form').submit(function(e){
+            $('#reg_form').submit(function(e){
                 e.preventDefault();
                 var formData = $(this).serialize();
                 $.ajax({
@@ -159,7 +159,7 @@ require './inc/lib.links.php';
                 position: 'topRight', // Position at the top-right of the page
               });
               setTimeout(function(){
-                window.location.href="login.php";
+                window.location.href="/login";
               },3000);
             } else {
               iziToast.error({

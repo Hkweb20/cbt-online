@@ -1,20 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
+session_start();
+if (!isset($_SESSION["user_id"])){
+header("Location: login.php");
+}
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Focus - Bootstrap Admin Dashboard </title>
-    <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon.png">
-    <!-- Datatable -->
-    <link href="./vendor/datatables/css/jquery.dataTables.min.css" rel="stylesheet">
-    <!-- Custom Stylesheet -->
-    <link href="./css/style.css" rel="stylesheet">
+require './inc/web-info.php';
+require 'inc/user_servicePrice.php';
 
-</head>
+$title = "Dashboard";
+require './inc/header.link.php';
 
+?>
 <body>
 
     <!--*******************
@@ -40,19 +36,7 @@
         <!--**********************************
             Nav header start
         ***********************************-->
-        <div class="nav-header">
-            <a href="index.html" class="brand-logo">
-                <img class="logo-abbr" src="./images/logo.png" alt="">
-                <img class="logo-compact" src="./images/logo-text.png" alt="">
-                <img class="brand-title" src="./images/logo-text.png" alt="">
-            </a>
-
-            <div class="nav-control">
-                <div class="hamburger">
-                    <span class="line"></span><span class="line"></span><span class="line"></span>
-                </div>
-            </div>
-        </div>
+         <?php  require './inc/nav.php'; ?>
         <!--**********************************
             Nav header end
         ***********************************-->
@@ -60,108 +44,7 @@
         <!--**********************************
             Header start
         ***********************************-->
-        <div class="header">
-            <div class="header-content">
-                <nav class="navbar navbar-expand">
-                    <div class="collapse navbar-collapse justify-content-between">
-                        <div class="header-left">
-                            <div class="search_bar dropdown">
-                                <span class="search_icon p-3 c-pointer" data-toggle="dropdown">
-                                    <i class="mdi mdi-magnify"></i>
-                                </span>
-                                <div class="dropdown-menu p-0 m-0">
-                                    <form>
-                                        <input class="form-control" type="search" placeholder="Search" aria-label="Search">
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-
-                        <ul class="navbar-nav header-right">
-                            <li class="nav-item dropdown notification_dropdown">
-                                <a class="nav-link" href="#" role="button" data-toggle="dropdown">
-                                    <i class="mdi mdi-bell"></i>
-                                    <div class="pulse-css"></div>
-                                </a>
-                                <div class="dropdown-menu dropdown-menu-right">
-                                    <ul class="list-unstyled">
-                                        <li class="media dropdown-item">
-                                            <span class="success"><i class="ti-user"></i></span>
-                                            <div class="media-body">
-                                                <a href="#">
-                                                    <p><strong>Martin</strong> has added a <strong>customer</strong> Successfully
-                                                    </p>
-                                                </a>
-                                            </div>
-                                            <span class="notify-time">3:20 am</span>
-                                        </li>
-                                        <li class="media dropdown-item">
-                                            <span class="primary"><i class="ti-shopping-cart"></i></span>
-                                            <div class="media-body">
-                                                <a href="#">
-                                                    <p><strong>Jennifer</strong> purchased Light Dashboard 2.0.</p>
-                                                </a>
-                                            </div>
-                                            <span class="notify-time">3:20 am</span>
-                                        </li>
-                                        <li class="media dropdown-item">
-                                            <span class="danger"><i class="ti-bookmark"></i></span>
-                                            <div class="media-body">
-                                                <a href="#">
-                                                    <p><strong>Robin</strong> marked a <strong>ticket</strong> as unsolved.
-                                                    </p>
-                                                </a>
-                                            </div>
-                                            <span class="notify-time">3:20 am</span>
-                                        </li>
-                                        <li class="media dropdown-item">
-                                            <span class="primary"><i class="ti-heart"></i></span>
-                                            <div class="media-body">
-                                                <a href="#">
-                                                    <p><strong>David</strong> purchased Light Dashboard 1.0.</p>
-                                                </a>
-                                            </div>
-                                            <span class="notify-time">3:20 am</span>
-                                        </li>
-                                        <li class="media dropdown-item">
-                                            <span class="success"><i class="ti-image"></i></span>
-                                            <div class="media-body">
-                                                <a href="#">
-                                                    <p><strong> James.</strong> has added a<strong>customer</strong> Successfully
-                                                    </p>
-                                                </a>
-                                            </div>
-                                            <span class="notify-time">3:20 am</span>
-                                        </li>
-                                    </ul>
-                                    <a class="all-notification" href="#">See all notifications <i
-                                            class="ti-arrow-right"></i></a>
-                                </div>
-                            </li>
-                            <li class="nav-item dropdown header-profile">
-                                <a class="nav-link" href="#" role="button" data-toggle="dropdown">
-                                    <i class="mdi mdi-account"></i>
-                                </a>
-                                <div class="dropdown-menu dropdown-menu-right">
-                                    <a href="./app-profile.html" class="dropdown-item">
-                                        <i class="icon-user"></i>
-                                        <span class="ml-2">Profile </span>
-                                    </a>
-                                    <a href="./email-inbox.html" class="dropdown-item">
-                                        <i class="icon-envelope-open"></i>
-                                        <span class="ml-2">Inbox </span>
-                                    </a>
-                                    <a href="./page-login.html" class="dropdown-item">
-                                        <i class="icon-key"></i>
-                                        <span class="ml-2">Logout </span>
-                                    </a>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </nav>
-            </div>
-        </div>
+        <?php  require './inc/header.php'; ?>
         <!--**********************************
             Header end ti-comment-alt
         ***********************************-->
@@ -169,54 +52,7 @@
         <!--**********************************
             Sidebar start
         ***********************************-->
-        <div class="quixnav">
-            <div class="quixnav-scroll">
-                <ul class="metismenu" id="menu">
-                    <li class="nav-label first">Main Menu</li>
-                    <li><a href="./index.html"><i
-                                class="icon icon-single-04"></i><span class="nav-text">Dashboard</span></a>
-                    </li>
-                    <li class="nav-label">Navigations</li>
-                    <li><a href="widget-basic.html" aria-expanded="false"><i class="icon icon-globe-2"></i><span
-                        class="nav-text">e-wallet</span></a></li>
-                    <li><a href="widget-basic.html" aria-expanded="false"><i class="icon icon-globe-2"></i><span
-                            class="nav-text">Transaction History</span></a></li>
-                    <li><a href="widget-basic.html" aria-expanded="false"><i class="icon icon-globe-2"></i><span
-                                class="nav-text">How It works</span></a></li>
-                    <li><a href="widget-basic.html" aria-expanded="false"><i class="icon icon-globe-2"></i><span
-                                    class="nav-text">Profile</span></a></li>
-                    <li><a href="widget-basic.html" aria-expanded="false"><i class="icon icon-globe-2"></i><span
-                                            class="nav-text">Change Password</span></a></li>
-                    <li> <a href="./page-login.html" class="dropdown-item">
-                        <i class="icon-key"></i>
-                        <span class="ml-2">Logout </span>
-                    </a></li>
-                  
-                   
-                    <li class="nav-label">Forms</li>
-                    <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
-                                class="icon icon-form"></i><span class="nav-text">Forms</span></a>
-                        <ul aria-expanded="false">
-                            <li><a href="./form-element.html">Form Elements</a></li>
-                            <li><a href="./form-wizard.html">Wizard</a></li>
-                            <li><a href="./form-editor-summernote.html">Summernote</a></li>
-                            <li><a href="form-pickers.html">Pickers</a></li>
-                            <li><a href="form-validation-jquery.html">Jquery Validate</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-label">Table</li>
-                    <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
-                                class="icon icon-layout-25"></i><span class="nav-text">Table</span></a>
-                        <ul aria-expanded="false">
-                            <li><a href="table-bootstrap-basic.html">Bootstrap</a></li>
-                            <li><a href="table-datatable-basic.html">Datatable</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-
-
-        </div>
+        <?php  require './inc/sidebar.php'; ?>
         <!--**********************************
             Sidebar end
         ***********************************-->
@@ -233,16 +69,19 @@
                         <div class="col-12 col-md-6 mb-4">
                             <div class="card h-100 shadow-sm">
                                 <div class="card-body">
-                                    <h5 class="card-header text-center text-primary border-bottom">Upload O'Level Result</h5>
+                                    <h5 class="card-header  text-white border-bottom">Upload O'Level Result</h5>
                                     <div class="card-body">
-                                        <p class="bg-primary p-2">If you are on this page, we expect that you have already made the successful payment of N2,500 on the JAMB portal.</p>
-                                        
-                                        <!-- Amount Section -->
+                                        <?php if ($user['u_wallet'] >= $prices['jamb_olevelPrice']) {
+    echo "<p class='bg-success p-2 text-white'>Hello {$user['u_userName']}, you have sufficient balance to proceed. Your wallet balance is Naira ₦{$user['u_wallet']} and the service price is Naira ₦{$prices['jamb_olevelPrice']}. Please proceed with your purchase.</p>";
+} else {
+    echo "<p class='bg-danger p-2 text-white'>Hello {$user['u_userName']}, your purchase cannot be completed due to insufficient balance. Your wallet balance is Naira ₦{$user['u_wallet']}, and the service price is Naira ₦{$prices['jamb_olevelPrice']}. Please fund your wallet to proceed with this service.</p>";
+} ?>
+                                            <!-- Amount Section -->
                                         <div class="mt-4">
-                                            <h6>Amount</h6>
+                                            <h6>Service Charges</h6>
                                             <div class="input-group">
                                                 <span class="input-group-text">₦</span>
-                                                <input type="text" class="form-control" value="2500" readonly>
+                                                <input type="text" class="form-control" value="<?php echo $prices['jamb_olevelPrice'];  ?>" disabled>
                                             </div>
                                         </div>
                 
@@ -252,18 +91,20 @@
                                             <select id="paymentMethod" class="form-control" onchange="toggleProceedButton()">
                                                 <option value="">Select Payment Method</option>
                                                 <option value="ewallet">e-Wallet</option>
-                                                <option value="debitCard">Debit Card</option>
                                             </select>
                                         </div>
                 
                                         <!-- Proceed Button -->
                                         <div class="text-center mt-4">
-                                            <button id="proceedButton" class="btn btn-primary" disabled>Proceed</button>
+                                        <?php if ($user['u_wallet'] >= $prices['jamb_olevelPrice']) {
+                                             echo '<a href="olevel-upload-form.php">
+                                             <button id="proceedButton" class="btn btn-primary" >Proceed</button>  </a>';
+                                             }   ?>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                     </div>
                 
                         <!-- How It Works Card -->
                         <div class="col-12 col-md-6 mb-4">

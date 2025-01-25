@@ -1,0 +1,10 @@
+# RewriteEngine On
+
+# # Remove .php extension from URLs
+# RewriteCond %{REQUEST_FILENAME} !-d
+# RewriteCond %{REQUEST_FILENAME} !-f
+# RewriteRule ^(.*)$ $1.php [L,QSA]
+
+# # Optional: Redirect URLs with .php to the URL without .php (for SEO)
+# RewriteCond %{THE_REQUEST} \s(.+)\.php\s [NC]
+# RewriteRule ^(.+)\.php$ /$1 [R=301,L]

@@ -274,7 +274,7 @@
                 </div>
 
                 <div class="col-12 col-md-4 mb-4">
-                    <a href="jamb-o-level-upload.html" class="card-link text-decoration-none">
+                    <a href="jamb-o-level-upload.php" class="card-link text-decoration-none">
                         <div class="card h-100 shadow-sm">
                             <div class="card-body text-center">
                                 <h5 class="card-title text-primary">JAMB</h5>

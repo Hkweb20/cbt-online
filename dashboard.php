@@ -1,8 +1,14 @@
 <?php
+session_start();
+if (!isset($_SESSION["user_id"])){
+header("Location: login.php");
+}
+
 require './inc/web-info.php';
+require 'inc/user_servicePrice.php';
+
 $title = "Dashboard";
 require './inc/header.link.php';
-
 
 ?>
 
@@ -62,10 +68,11 @@ require './inc/header.link.php';
                         <div class="card shadow-sm">
                             <div class="mt-4 text-center">
                                 <h5>My e-Wallet</h5>
+                                <p>Username : <?php  echo $user['u_userName']; ?></p>
                             </div>
                             <hr>
                             <div class="card-body text-center">
-                                <p>Wallet Balance: <strong>N10,000</strong></p>
+                                <p>Wallet Balance ₦: <strong> <?php  echo number_format($user['u_wallet']); ?></strong></p>
                             </div>
                             <div class="card-footer text-center">
                                 <button class="btn btn-outline-primary ">
@@ -103,7 +110,7 @@ require './inc/header.link.php';
                 </div>
 
                 <div class="col-12 col-md-4 mb-4">
-                    <a href="jamb-o-level-upload.html" class="card-link text-decoration-none">
+                    <a href="jamb-o-level-upload.php" class="card-link text-decoration-none">
                         <div class="card h-100 shadow-sm">
                             <div class="card-body text-center">
                                 <h5 class="card-title text-primary">JAMB</h5>
@@ -111,7 +118,7 @@ require './inc/header.link.php';
                                 <h2 class="card-text">O'Level Upload.</h2>
                             </div>
                             <div class="card-footer text-center">
-                                <button class="btn btn-outline-primary rounded">600</button>
+                                <button class="btn btn-outline-primary rounded"><?php echo $prices['jamb_olevelPrice']; ?></button>
                             </div>
                         </div>
                     </a>

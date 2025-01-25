@@ -79,7 +79,7 @@ require  './inc/lib.links.php';
                 var formData = $(this).serialize();
                 $.ajax({
                     type: "post",
-                    url: "api/login",
+                    url: "api/login.php",
                     data: formData,
                     beforeSend: function() {
                         Swal.fire({
@@ -101,7 +101,7 @@ require  './inc/lib.links.php';
                 position: 'topRight', // Position at the top-right of the page
               });
               setTimeout(function(){
-                window.location.href="dashboard";
+                window.location.href="dashboard.php";
               },3000);
             } else {
               iziToast.error({
