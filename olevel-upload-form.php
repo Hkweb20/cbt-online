@@ -149,7 +149,7 @@ require './inc/header.link.php';
                                                 <option value="gce">GCE</option>
                                             </select>
                                         </div>
-                                        <div class="col-md-1 d-flex align-items-center justify-content-center">
+                                        <div class="col-md-1 mt-3 d-flex align-items-center justify-content-center">
                                             <button type="button" class="btn btn-danger" onclick="deleteSubject(this)">
                                                 <i class="bi bi-trash"></i>
                                             </button>
@@ -284,58 +284,7 @@ require './inc/header.link.php';
                         secondSittingFields.style.display = 'none';
                     }
                 }
-            </script>
-<script>
- // Assuming you are using jQuery for your form submission
-$(document).ready(function () {
-    $('#levelResultForm').on('submit', function (e) {
-        e.preventDefault();
-
-        // Prepare the form data, including file uploads
-        var formData = new FormData(this);
-
-        // Gather subjects into an array
-        var subjects = [];
-
-        // Loop through the subjects fields (you might need to adapt based on your form structure)
-        $(".subject-entry").each(function () {
-            var subjectData = {
-                subject: $(this).find('.subject-name').val(),
-                grade: $(this).find('.subject-grade').val(),
-                year: $(this).find('.subject-year').val(),
-                examNumber: $(this).find('.subject-exam-number').val(),
-                examType: $(this).find('.subject-exam-type').val()
-            };
-            subjects.push(subjectData);
-        });
-
-        // Convert subjects array to a JSON string
-        formData.append('subjects', JSON.stringify(subjects));
-
-        // Send the form data via AJAX
-        $.ajax({
-            url: '/api/jamb.api.olevel.php',  // Backend URL
-            type: 'POST',
-            data: formData,
-            processData: false,
-            contentType: false,
-            success: function (response) {
-                var res = JSON.parse(response);
-                if (res.status === 'success') {
-                    alert('Data submitted successfully');
-                } else {
-                    alert('Error: ' + res.message.join(', '));
-                }
-            },
-            error: function () {
-                alert('An error occurred.');
-            }
-        });
-    });
-});
-
-</script>
-
+   </script>
         </div>
         
         

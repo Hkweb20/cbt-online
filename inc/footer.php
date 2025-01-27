@@ -1,3 +1,4 @@
+
 <div class="footer bg-primary text-white py-4">
             <div class="container">
                 <div class="row">
@@ -32,8 +33,7 @@
                         <!-- Account Details -->
                         <div class="account-details mb-3 mb-md-0">
                             <h6 class="text-warning">Account Details</h6>
-                            <p><strong>MONIEPOINT MFB</strong><br>Account Name: Embassy Cafe 3<br>Account Number: 5718988504</p>
-                            <p><strong>ZENITH BANK</strong><br>Account Name: Embassy Business Cafe<br>Account Number: 1017247141</p>
+                            <p><strong><?php echo  $bankName;   ?></strong><br>Account Name: <?php echo $accountName; ?><br>Account Number: <?php echo $accountNumber;  ?></p>
                         </div>
                     </div>
                 </div>

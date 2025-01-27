@@ -75,9 +75,9 @@ require './inc/header.link.php';
                                 <p>Wallet Balance ₦: <strong> <?php  echo number_format($user['u_wallet']); ?></strong></p>
                             </div>
                             <div class="card-footer text-center">
-                                <button class="btn btn-outline-primary ">
-                                    <i class="bi bi-wallet2"></i> Fund Wallet
-                                </button>
+                            <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#fundWalletModal">
+                        <i class="bi bi-wallet2"></i> Fund Wallet
+                    </button>
                             </div>
                             
                         </div>
@@ -241,7 +241,50 @@ require './inc/header.link.php';
         <!--**********************************
             Content body end
         ***********************************-->
+        <div class="modal fade" id="fundWalletModal" tabindex="-1" aria-labelledby="fundWalletModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="fundWalletModalLabel">Fund Wallet</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p class="p-2 bg-primary">Kindly Choose FLUTTERWAVE to avoid the extra ₦100 fee on PAYSTACK for transactions of ₦2,500 and above.</p>
+                
+                <form id="fundWalletForm">
+                 <!-- Bank Transfer Section (hidden by default) -->
+                   
+                    <div id="bankDetails" style="border: 1px solid #ddd; padding: 15px; border-radius: 8px; background-color: #fff;">
+                        <h6 class="mb-4" style="font-size: 1.2rem; font-weight: bold;">Bank Transfer Details</h6>
+                        <div class="my-2">
+                            <span class="text-danger">*</span> Please make payment into the bank account below, </div>
+                        <table class="table table-sm table-bordered">
+                            <tbody>
+                                <tr>
+                                    <th scope="row" style="width: 30%;">Account Name:</th>
+                                    <td><?php echo $accountName;  ?></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Bank Name:</th>
+                                    <td><?php echo $bankName; ?></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Account Number:</th>
+                                    <td><?php echo $accountNumber; ?></td>
+                                </tr>
+                               
+                            </tbody>
+                        </table>
+                        
+                    </div>
 
+
+                    
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 
         <!--**********************************
             Footer start

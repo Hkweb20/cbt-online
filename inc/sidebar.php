@@ -2,11 +2,11 @@
             <div class="quixnav-scroll">
                 <ul class="metismenu" id="menu">
                     <li class="nav-label first">Main Menu</li>
-                    <li><a href="./index.html"><i
+                    <li><a href="./dashboard.php"><i
                                 class="icon icon-single-04"></i><span class="nav-text">Dashboard</span></a>
                     </li>
                     <li class="nav-label">Navigations</li>
-                    <li><a href="wallet.html" aria-expanded="false"><i class="icon icon-globe-2"></i><span
+                    <li><a href="wallet.php" aria-expanded="false"><i class="icon icon-globe-2"></i><span
                         class="nav-text">e-wallet</span></a></li>
                     <li><a href="widget-basic.html" aria-expanded="false"><i class="icon icon-globe-2"></i><span
                             class="nav-text">Transaction History</span></a></li>
