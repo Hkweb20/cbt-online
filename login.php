@@ -60,7 +60,7 @@ require  './inc/lib.links.php';
                 </div>
             </form>
             <div class="new-account mt-3">
-                <p>Don't have an account? <a class="text-primary" href="register">Sign up</a></p>
+                <p>Don't have an account? <a class="text-primary" href="register.php">Sign up</a></p>
             </div>
         </div>
     </div>

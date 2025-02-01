@@ -1,22 +1,154 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Login Page</title>
     <style>
-        p {
-           min-height: 200px;
-           min-width: 300px;
-
-           max-height: 1000px;
-           max-width: 1000px;
-
+        canvas {
+            border: 2px solid black;
+            background-color: #f0f0f0;
         }
-
+        body {
+            font-family: Arial, sans-serif;
+            position: relative;
+            margin: 0;
+            padding: 20px;
+        }
+        .button-container {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+        }
     </style>
 </head>
 <body>
-     <p>Kaura namoda</p>
+    <canvas id="loginCanvas"></canvas>
+
+    <div class="button-container">
+        <button onclick="login()">Enter login details</button>
+        <input type="email" placeholder="Email" id="email">
+        <input type="password" placeholder="Password" id="password">
+        <button onclick="showLoading()">Show Loading...</button>
+    </div>
+
+    <p class="message-content"></p>
+    <p>Success!</p>
 </body>
 </html>
+
+<script>
+function login() {
+    const canvas = document.getElementById('loginCanvas');
+    const ctx = canvas.getContext('2d');
+
+    // Clear canvas
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    // Draw background gradient
+    ctx.fillStyle = '#f0f0f0';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    // Add text labels
+    const labelEmail = document.createElement('span');
+    labelEmail.textContent = 'Email';
+    labelEmail.style.color = 'white';
+    labelEmail.style.font = {
+        'size': 14,
+        'family': 'Arial'
+    };
+    labelEmail.style.left = 5;
+    canvas.appendChild(labelEmail);
+
+    const labelPassword = document.createElement('span');
+    labelPassword.textContent = 'Password';
+    labelPassword.style.color = 'white';
+    labelPassword.style.font = {
+        'size': 14,
+        'family': 'Arial'
+    };
+    labelPassword.style.left = 5 + canvas.width/2;
+    canvas.appendChild(labelPassword);
+
+    // Add form
+    const inputEmail = document.createElement('input');
+    inputEmail.type = 'email';
+    inputEmail.value = '';
+    inputEmail.id = 'email';
+    canvas.appendChild(inputEmail);
+    let email, password;
+
+    function takeInput() {
+        email = document.getElementById('email').value;
+        password = document.getElementById('password').value;
+        const result = inputEmail.value.trim();
+        alert('Email: ', email);
+        alert('Password: ', password);
+        if (result) {
+            showResult(email, password);
+        } else {
+            alert(result + ' is not a valid email address.');
+            return;
+        }
+    }
+
+    function showLoading() {
+        const result = inputEmail.value.trim();
+        alert('Loading...'); // Loading message
+        setTimeout(takeInput, 2000);
+    }
+
+    function takeEmailPassword() {
+        if (email && password) {
+            const ctx = document.getElementById('loginCanvas');
+            const canvasCtx = ctx.getContext('2d');
+
+            // Draw text labels on canvas
+            ctx.fillStyle = '#fff';
+            ctx.font = '14px Arial';
+            ctx.fillText(email, 5, 30);
+            ctx.fillText(password, 5 + canvas.width/2.2, 70);
+
+            // Add input fields to canvas
+            const inputEmailText = document.createElement('div');
+            inputEmailText.textContent = email;
+            canvas.appendChild(inputEmailText);
+            const inputPasswordText = document.createElement('div');
+            inputPasswordText.textContent = password;
+            canvas.appendChild(inputPasswordText);
+
+            const result = takeInput();
+            showLoading();
+        }
+    }
+
+    function showResult(email, password) {
+        if (email && password) {
+            takeEmailPassword();
+            clearResult();
+        } else {
+            alert('Please enter a valid email address and a password');
+        }
+    }
+
+    // Clear canvas
+    function clearCanvas() {
+        const canvas = document.getElementById('loginCanvas');
+        canvas.width = 0;
+        canvas.height = 0;
+    }
+
+    // Start form handling
+    showResult(email, password);
+}
+
+// JavaScript for form submission (handled by backend)
+document.addEventListener('submit', function(e) {
+    if (!email && !password) return;
+    
+    clearResult();
+    inputEmail.value = email;
+    inputPassword.value = password;
+
+    takeInput();
+});
+
+</script>

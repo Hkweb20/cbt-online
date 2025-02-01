@@ -16,7 +16,7 @@
                                     class="nav-text">Profile</span></a></li>
                     <li><a href="widget-basic.html" aria-expanded="false"><i class="icon icon-globe-2"></i><span
                                             class="nav-text">Change Password</span></a></li>
-                    <li> <a href="./page-login.html" class="dropdown-item">
+                    <li> <a href="logout.php" class="dropdown-item">
                         <i class="icon-key"></i>
                         <span class="ml-2">Logout </span>
                     </a></li>

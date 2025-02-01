@@ -9,6 +9,7 @@ require 'inc/user_servicePrice.php';
 
 $title = "Dashboard";
 require './inc/header.link.php';
+//require 'bilpay_acc.php';
 
 ?>
 
